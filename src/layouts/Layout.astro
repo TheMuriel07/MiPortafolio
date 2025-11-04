@@ -1,0 +1,291 @@
+---
+---
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portafolio | Luis y Karla</title>
+</head>
+<body>
+  <header class="header">
+    <nav>
+      <h1> Portafolio de Luis & Karla </h1>
+      <div class="nav-links">
+        <a href="#inicio" id="btn-volver-header" class="oculto">⬅ Volver</a>
+        <a href="#inicio">Inicio</a>
+        <a href="#contacto">Contacto</a>
+      </div>
+    </nav>
+  </header>
+
+  <main class="contenedor">
+
+    <section id="inicio" class="inicio">
+      <h2> Bienvenido </h2>
+      <p>Selecciona el portafolio que deseas ver:</p>
+      <div class="botones-inicio">
+        <button id="btn-ir-luis" class="btn-luis">Ver Portafolio de Luis</button>
+        <button id="btn-ir-karla" class="btn-karla">Ver Portafolio de Karla</button>
+      </div>
+    </section>
+
+
+    <section id="perfil-luis" class="perfil oculto">
+      <img src="IMG.jpeg" alt="Luis Muriel" class="foto" />
+      <h2 class="nombre">Luis Muriel </h2>
+      <p class="rol">Estudiante y programador novato</p>
+      <p class="presentacion">
+        Soy Luis Muriel, tengo 16 años y nací en Santo Domingo de los Tsáchilas.  
+        Me encanta la programación, el fútbol y los desafíos.  
+        Estudio en el colegio Alessandro Volta, especialidad Informática, y me esfuerzo cada día por ser mejor.
+        <br><br>
+        Poseo habilidades como la creatividad y la perseverancia.  
+        También sé trabajar en equipo, usar herramientas digitales y aprender de los errores para seguir mejorando en cada proyecto.
+      </p>
+      </p>
+      </p>
+
+      <section class="metas">
+        <h3> Metas de Luis </h3>
+        <ul>
+          <li>Convertirme en un programador profesional.</li>
+          <li>Aprender más lenguajes de programación.</li>
+          <li>Participar en proyectos reales y en equipo.</li>
+          <li>Me gustaria crear un videojuego.</li>
+        </ul>
+      </section>
+    </section>
+
+
+    <section id="perfil-karla" class="perfil oculto">
+      <img src="FOTO.jpeg.jpeg" alt="Karla Gómez" class="foto" />
+      <h2 class="nombre">Karla Gómez </h2>
+      <p class="rol">Estudiante creativa y programadora novata</p>
+      <p class="presentacion">
+       Soy Karla Gómez, tengo 16 casi 17 años, estudio en el colegio Alessandro Volta cursando el segundo año de informática. 
+Algunos de mis objetivos son graduarme y estudiar medicina
+      </p>
+
+      <section class="metas">
+        <h3> Metas de Karla </h3>
+        <ul>
+          
+          <li>Entrar a la universidad.</li>
+          <li>Viajar a varios paises</li>
+          <li>Dominar por completo el inglés.</li>
+          <li>Escribir mi primer libro.</li>
+          <li>Perder la ansiedad social.</li>
+          <li>Entrar a la universidad</li>
+
+
+        </ul>
+      </section>
+    </section>
+
+
+    <section class="contacto" id="contacto">
+      <h3> Contacto</h3>
+      <p>Si deseas contactarnos, escríbenos a:</p>
+      <a href="mailto:estudiantes@ueavolta.edu.ec" class="email">estudiantes@ueavolta.edu.ec</a>
+    </section>
+  </main>
+
+
+
+  <script>
+    const inicio = document.getElementById("inicio");
+    const perfilLuis = document.getElementById("perfil-luis");
+    const perfilKarla = document.getElementById("perfil-karla");
+    const btnIrLuis = document.getElementById("btn-ir-luis");
+    const btnIrKarla = document.getElementById("btn-ir-karla");
+    const btnVolverHeader = document.getElementById("btn-volver-header");
+
+    btnIrLuis.addEventListener("click", () => {
+      inicio.classList.add("oculto");
+      perfilLuis.classList.remove("oculto");
+      perfilKarla.classList.add("oculto");
+      btnVolverHeader.classList.remove("oculto");
+    });
+
+    btnIrKarla.addEventListener("click", () => {
+      inicio.classList.add("oculto");
+      perfilKarla.classList.remove("oculto");
+      perfilLuis.classList.add("oculto");
+      btnVolverHeader.classList.remove("oculto");
+    });
+
+    btnVolverHeader.addEventListener("click", () => {
+      perfilLuis.classList.add("oculto");
+      perfilKarla.classList.add("oculto");
+      inicio.classList.remove("oculto");
+      btnVolverHeader.classList.add("oculto");
+    });
+  </script>
+
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #0066cc;
+      color: #fff;
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+
+    .header {
+      background: #004c99;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.3);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .header nav {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .header h1 {
+      font-size: 1.4rem;
+      color: #ffde59;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1.2rem;
+    }
+
+    .nav-links a {
+      color: #fff;
+      text-decoration: none;
+    }
+
+    .nav-links a:hover {
+      color: #ffde59;
+    }
+
+    .contenedor {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 3rem 2rem;
+    }
+
+    .inicio {
+      text-align: center;
+      background: rgba(255, 255, 255, 0.1);
+      border: 2px solid #ffde59;
+      border-radius: 12px;
+      padding: 3rem 2rem;
+    }
+
+    .inicio h2 {
+      color: #ffde59;
+      font-size: 2.3rem;
+      margin-bottom: 1rem;
+    }
+
+    .botones-inicio button {
+      border: none;
+      padding: 0.9rem 1.8rem;
+      margin: 1rem;
+      border-radius: 25px;
+      font-weight: bold;
+      cursor: pointer;
+      color: #000;
+    }
+
+    .btn-luis {
+      background-color: #00ffcc;
+    }
+
+    .btn-karla {
+      background-color: #ff66cc;
+    }
+
+    .perfil {
+      text-align: center;
+      background: rgba(255, 255, 255, 0.15);
+      border-radius: 12px;
+      padding: 2.5rem;
+      margin-top: 2rem;
+    }
+
+    .foto {
+      width: 130px;
+      height: 200px;
+      border-radius: 20%;
+      border: 5px solid #ffde59;
+      margin-bottom: 1rem;
+      object-fit: cover;
+    }
+
+    .nombre {
+      color: #ffde59;
+      font-size: 1.8rem;
+      font-weight: bold;
+    }
+
+    .rol { color: #e0f7ff; margin-bottom: 1rem; }
+
+    .presentacion {
+      color: #fff;
+      max-width: 650px;
+      margin: 0 auto;
+    }
+
+    .metas {
+      background: rgba(0, 0, 0, 0.3);
+      border-radius: 10px;
+      padding: 2rem;
+      margin-top: 2rem;
+    }
+
+    .metas h3 {
+      color: #ffde59;
+      margin-bottom: 1rem;
+    }
+
+    .metas li {
+      margin: 0.5rem 0;
+      border-bottom: 1px solid #ffde59;
+      padding-bottom: 0.4rem;
+    }
+
+    .contacto {
+      background: rgba(255, 255, 255, 0.15);
+      border-radius: 10px;
+      padding: 2rem;
+      text-align: center;
+      margin-top: 2rem;
+    }
+
+    .email {
+      color: #ffde59;
+      border: 2px solid #ffde59;
+      padding: 0.6rem 1rem;
+      border-radius: 5px;
+      text-decoration: none;
+    }
+
+    .email:hover {
+      background: #ffde59;
+      color: #000;
+    }
+
+    .footer {
+      text-align: center;
+      padding: 2rem;
+      color: #fff;
+      font-size: 0.9rem;
+    }
+
+    .oculto { display: none; }
+  </style>
+</body>
+</html>
